@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -47,11 +48,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
+add_message_files(
+  FILES
+  Data4.msg
 #   Message2.msg
-# )
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -68,10 +69,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -105,7 +106,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES intelligent_robot_b_2022
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+ CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -149,6 +150,18 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+add_executable(motor_arduino src/motor_arduino.cpp)
+add_executable(ToF_I2C_distance-sensor_arduino src/ToF_I2C_distance-sensor_arduino.cpp)
+add_executable(servo_arduino src/servo_arduino.cpp)
+add_executable(color_sensor_arduino src/color_sensor_arduino.cpp)
+add_executable(encoder_arduino src/encoder_arduino.cpp)
+
+target_link_libraries(motor_arduino ${catkin_LIBRARIES})
+target_link_libraries(ToF_I2C_distance-sensor_arduino ${catkin_LIBRARIES})
+target_link_libraries(servo_arduino ${catkin_LIBRARIES})
+target_link_libraries(color_sensor_arduino ${catkin_LIBRARIES})
+target_link_libraries(encoder_arduino ${catkin_LIBRARIES})
 
 #############
 ## Install ##
