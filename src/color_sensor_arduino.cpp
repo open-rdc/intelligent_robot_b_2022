@@ -5,9 +5,9 @@
 
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
-#include "beginner_tutorials/Data4.h"
+#include "intelligent_robot_b_2022/Color.h"
 
-void colorCallback(const beginner_tutorials::Data4 &sub_color_msg)
+void colorCallback(const intelligent_robot_b_2022::Color &sub_color_msg)
 {
     ROS_INFO("COLOR_DATA : R[ %u ], G[ %u ], B[ %u ], IR[ %u ]", sub_color_msg.data1, sub_color_msg.data2, sub_color_msg.data3, sub_color_msg.data4);
 }
