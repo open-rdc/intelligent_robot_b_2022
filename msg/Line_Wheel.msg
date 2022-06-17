@@ -1,0 +1,7 @@
+bool Go_Stop     # Stop or Go (true=Go, false=Stop)
+bool Line_Wheel  # LineTrace or Motor_Wheel (true=LineTrace, false=Motor_Wheel)
+bool DIR_L       # Set DIR_L (true=正転, false=逆転)
+bool DIR_R       # Set DIR_R (true=正転, false=逆転)
+int32 PWM_L      # Set PWM_L (=0~255)
+int32 PWM_R      # Set PWM_R (=0~255)
+int32 Other      # other_check (Int32)

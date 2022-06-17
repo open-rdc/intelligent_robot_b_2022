@@ -52,6 +52,7 @@ add_message_files(
   FILES
   Int32_4.msg
   Color.msg
+  Line_Wheel.msg
 #   Message2.msg
 )
 
