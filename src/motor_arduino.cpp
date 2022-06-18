@@ -6,7 +6,7 @@
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
 
-std_msgs::Int32 pub_msg;
+std_msgs::Int32 pub_fan_msg;
 
 int main(int argc, char **argv)
 {
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
     while(ros::ok())
     {
-        ROS_INFO("PUBLISH_MESSAGE: [%d]", pub_msg.data);
+        ROS_INFO("PUBLISH_MESSAGE: [%d]", pub_fan_msg.data);
         //pub_msg.data = pub_msg.data % 2;
         pub_led.publish(pub_msg);
         loop_rate.sleep(); // ここでsleepしているが、同期周期を刻んでいると判断するべき。

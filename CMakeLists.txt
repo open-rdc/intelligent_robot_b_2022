@@ -154,16 +154,29 @@ include_directories(
 # )
 
 add_executable(motor_arduino src/motor_arduino.cpp)
-add_executable(ToF_I2C_distance-sensor_arduino src/ToF_I2C_distance-sensor_arduino.cpp)
-add_executable(servo_arduino src/servo_arduino.cpp)
-add_executable(color_sensor_arduino src/color_sensor_arduino.cpp)
-add_executable(encoder_arduino src/encoder_arduino.cpp)
-
 target_link_libraries(motor_arduino ${catkin_LIBRARIES})
+
+add_executable(ToF_I2C_distance-sensor_arduino src/ToF_I2C_distance-sensor_arduino.cpp)
 target_link_libraries(ToF_I2C_distance-sensor_arduino ${catkin_LIBRARIES})
+
+add_executable(servo_arduino src/servo_arduino.cpp)
 target_link_libraries(servo_arduino ${catkin_LIBRARIES})
+
+add_executable(color_sensor_arduino src/color_sensor_arduino.cpp)
 target_link_libraries(color_sensor_arduino ${catkin_LIBRARIES})
+
+add_executable(encoder_arduino src/encoder_arduino.cpp)
 target_link_libraries(encoder_arduino ${catkin_LIBRARIES})
+
+add_executable(Control_boll src/Control_boll.cpp)
+target_link_libraries(Control_boll ${catkin_LIBRARIES})
+
+add_executable(Control_linetrace src/Control_linetrace.cpp)
+target_link_libraries(Control_linetrace ${catkin_LIBRARIES})
+
+add_executable(Control_sensing src/Control_sensing.cpp)
+target_link_libraries(Control_sensing ${catkin_LIBRARIES})
+
 
 #############
 ## Install ##
