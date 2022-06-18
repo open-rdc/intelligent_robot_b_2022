@@ -7,7 +7,6 @@
 #    ros::ServiceServer srv_main = n.advertiseService("Control_sensing", Control_sensing);
 
 import rospy
-import rosnode
 # service message ( bool だけのやつがほしい。デフォルトで用意されてたはず )
 
 def main():
@@ -17,4 +16,3 @@ if __name__ == '__main__':
     
     if not rospy.is_shutdown():
         main()
-        
