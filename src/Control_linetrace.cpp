@@ -5,10 +5,10 @@
 
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
+#include "std_srvs/SetBool.h"  // bool data --- bool suscess , string message
 #include "intelligent_robot_b_2022/Int32_4.h"
 #include "intelligent_robot_b_2022/Color.h"
 #include "intelligent_robot_b_2022/Line_Wheel.h"
-// service message ( bool だけのやつがほしい。デフォルトで用意されてたはず )
 
 // pub_message
 //std_msgs::Int32 pub_servo_msg;
@@ -35,7 +35,7 @@ intelligent_robot_b_2022::Line_Wheel pub_linetrace_msg;
 //}
 
 // srv_Control_linetrace
-void Cotnrol_linetrace(const /* service message */)
+void Cotnrol_linetrace(std_srvs::SetBool::Request &request, std_srvs::SetBool::Response &response)
 {
     ros::spin();
 }

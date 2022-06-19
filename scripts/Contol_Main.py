@@ -1,16 +1,25 @@
+#!/usr/bin/env python3
+
 """License
     SPDX-License-Identifier:MIT
     Copyright (C) 2022 Yusuke Yamasaki. All Rights Reserved.
 """
-#    ros::ServiceServer srv_main = n.advertiseService("Control_linetrace", Control_linetrace);
-#    ros::ServiceServer srv_main = n.advertiseService("Control_boll", Control_boll);
-#    ros::ServiceServer srv_main = n.advertiseService("Control_sensing", Control_sensing);
 
 import rospy
-# service message ( bool だけのやつがほしい。デフォルトで用意されてたはず )
+from std_srvs.srv import SetBool
 
 def main():
-    print("hogehoge")
+    rospy.init_node('Control_Main')
+
+    control_linetrace = rospy.ServiceProxy("Control_linetrace", SetBool)
+    control_sensing = rospy.ServiceProxy("Control_sensing", SetBool)
+    contorl_boll = rospy.ServiceProxy("Control_boll", SetBool)
+
+    srv_name = ("Control_linetrace", "Control_sensing", "Control_boll")
+    for srv_name in srv_name:
+        rospy.wait_for_service(srv_name)
+
+    
 
 if __name__ == '__main__':
     
