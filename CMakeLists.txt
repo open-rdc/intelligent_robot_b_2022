@@ -53,7 +53,7 @@ add_message_files(
   Int32_4.msg
   Color.msg
   Line_Wheel.msg
-#   Message2.msg
+  rosbagdata.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -177,6 +177,8 @@ target_link_libraries(Control_linetrace ${catkin_LIBRARIES})
 add_executable(Control_sensing src/Control_sensing.cpp)
 target_link_libraries(Control_sensing ${catkin_LIBRARIES})
 
+add_executable(rosbag_linetrace src/rosbag_linetrace.cpp)
+target_link_libraries(rosbag_linetrace ${catkin_LIBRARIES})
 
 #############
 ## Install ##

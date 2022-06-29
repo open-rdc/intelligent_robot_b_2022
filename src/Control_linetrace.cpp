@@ -35,7 +35,7 @@ intelligent_robot_b_2022::Line_Wheel pub_linetrace_msg;
 //}
 
 // srv_Control_linetrace
-void Cotnrol_linetrace(std_srvs::SetBool::Request &request, std_srvs::SetBool::Response &response)
+void Control_linetrace(std_srvs::SetBool::Request &request, std_srvs::SetBool::Response &response)
 {
     ros::spin();
 }
@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 //    ros::Subscriber sub_distance_1 = n.subscribe("Distance_1", 45, distance_1Callback);
 //    ros::Subscriber sub_encoder = n.subscribe("encoder_situation", 10, encoderCallback);
 
-    ros::ServiceServer srv_main = n.advertiseService("Control_linetrace", Control_linetrace);
+    //ros::ServiceServer srv_main = n.advertiseService("Control_linetrace", Control_linetrace);
 
     ros::Rate loop_rate(16000000); // 単位：Hz_ここの値が、arduinoとの同期周期の定義になる。
 

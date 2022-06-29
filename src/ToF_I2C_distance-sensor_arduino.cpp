@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
 
-  ros::Subscriber sub = n.subscribe("Distance_1", 45, chatterCallback);
+  ros::Subscriber sub = n.subscribe("Distance_1", 45, distanceCallback);
 
   ros::spin();
 
