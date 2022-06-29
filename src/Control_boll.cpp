@@ -5,6 +5,7 @@
 
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
+#include "std_srvs/SetBool.h"  // bool data --- bool suscess , string message
 #include "intelligent_robot_b_2022/Int32_4.h"
 #include "intelligent_robot_b_2022/Color.h"
 #include "intelligent_robot_b_2022/Line_Wheel.h"
@@ -33,6 +34,12 @@ void encoderCallback(const intelligent_robot_b_2022::Int32_4 &sub_encoder_msg)
     ROS_INFO("ENCODER_DATA : L[ %d ], R[ %d ]", sub_encoder_msg.data1, sub_encoder_msg.data2);
 }
 
+// srv_Control_boll
+void Control_boll(std_srvs::SetBool::Request &request, std_srvs::SetBool::Response &response)
+{
+    ros::spin();
+}
+
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "Control_boll");
@@ -48,7 +55,11 @@ int main(int argc, char **argv)
 //    ros::Subscriber sub_distance_1 = n.subscribe("Distance_1", 45, distance_1Callback);
     ros::Subscriber sub_encoder = n.subscribe("encoder_situation", 10, encoderCallback);
 
+    //ros::ServiceServer srv_main = n.advertiseService("Control_boll", Control_boll);
+
     ros::Rate loop_rate(16000000); // 単位：Hz_ここの値が、arduinoとの同期周期の定義になる。
+
+    ROS_INFO("NODE: Control_boll standby.");
 
     ros::spin();
 

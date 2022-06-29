@@ -15,7 +15,7 @@ void servoCallback(const std_msgs::Int32& msg)  // Topic : dir_ang(pub), now_ang
 {    
     ros::NodeHandle n;
 
-    ros::Publisher servo_pub = n.advertise<std_msgs::Int32>("dir_ang", 10);  // サーボの角度制御opic
+    ros::Publisher servo_pub = n.advertise<std_msgs::Int32>("Servo", 10);  // サーボの角度制御opic
 
     ros::Rate loop_rate(16000000);  // arduinoに合わせた周期(モータ制御のnodeに合わせた。値の根拠不明)
     

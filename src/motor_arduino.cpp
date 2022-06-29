@@ -15,13 +15,13 @@ int main(int argc, char **argv)
     ros::Publisher pub_led = nh.advertise<std_msgs::Int32>("led", 10);
     ros::Rate loop_rate(16000000); // 単位：Hz_ここの値が、arduinoとの同期周期の定義になる。
 
-    pub_msg.data = 1;
+    pub_fan_msg.data = 1;
 
     while(ros::ok())
     {
         ROS_INFO("PUBLISH_MESSAGE: [%d]", pub_fan_msg.data);
         //pub_msg.data = pub_msg.data % 2;
-        pub_led.publish(pub_msg);
+        pub_led.publish(pub_fan_msg);
         loop_rate.sleep(); // ここでsleepしているが、同期周期を刻んでいると判断するべき。
         //led_msg.data += 1;
     }
