@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 
     ros::NodeHandle n;
 
-    ros::Subscriber sub = n.subscribe("chatter", 10, CallBack);
+    ros::Subscriber sub = n.subscribe("linetrace", 10, CallBack);
 
     ros::Rate loop_Rate(16000000);
 
