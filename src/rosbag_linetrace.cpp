@@ -9,13 +9,13 @@
 
 void CallBack(const intelligent_robot_b_2022::rosbagdata &data)
 {
-    ROS_INFO("Sub_Data: L_encoder[%d] R_encoder[%d] L_x[%f] R_x[%f] L_v[%f] R_v[%f] v[%f]", data.L_encoder
-                                                                                          , data.R_encoder
-                                                                                          , data.L_x
-                                                                                          , data.R_x
-                                                                                          , data.L_v
-                                                                                          , data.R_v
-                                                                                          , data.v);
+    // ROS_INFO("Sub_Data: L_encoder[%d] R_encoder[%d] L_x[%f] R_x[%f] L_v[%f] R_v[%f] v[%f]", data.L_encoder
+    //                                                                                       , data.R_encoder
+    //                                                                                       , data.L_x
+    //                                                                                       , data.R_x
+    //                                                                                       , data.L_v
+    //                                                                                       , data.R_v
+    //                                                                                       , data.v);
 }
 // void Callback(const std_msgs::String &data)
 // {
